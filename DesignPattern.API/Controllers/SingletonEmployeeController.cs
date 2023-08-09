@@ -10,9 +10,9 @@ namespace DesignPattern.API.Controllers
 	[ApiController]
 	public class SingletonEmployeeController : ControllerBase
 	{
-		private readonly ManageDatabase _manageDatabase;
+		private readonly ManageDatabaseForSingleton _manageDatabase;
 
-		public SingletonEmployeeController(ManageDatabase manageDatabase)
+		public SingletonEmployeeController(ManageDatabaseForSingleton manageDatabase)
 		{
 			_manageDatabase = manageDatabase;
 		}

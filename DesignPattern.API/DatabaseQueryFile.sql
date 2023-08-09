@@ -35,6 +35,10 @@ CREATE TABLE tblEmployee(
 GO
 
 INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Abhi', 123.12, 1, 'abhi@gmail.com')
+INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Jil', 123.12, 2, 'jil@gmail.com')
+INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Jay', 123.12, 3, 'jay@gmail.com')
+INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Bhavin', 123.12, 4, 'bhavin@gmail.com')
+INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Parthiv', 123.12, 5, 'parthiv@gmail.com')
 
 -- -- Get All EmployeeDetail Query
 -- SELECT emp.Name, emp.Salary, dep.DepartmentName, emp.EmailAddress, emp.JoiningDate, sta.StatusName  FROM tblEmployee emp INNER JOIN tblDepartement dep ON dep.DepartmentId = emp.DepartmentId INNER JOIN tblStatus sta ON sta.StatusId = emp.StatusId 
@@ -49,3 +53,6 @@ INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Abhi', 
 
 -- -- Soft Delete Employee
 -- UPDATE tblEmployee SET isActive = 1 WHERE EmployeeId = 7
+
+-- -- Get DepartmentId employee
+-- SELECT DepartmentId FROM tblEmployee WHERE EmployeeId = 1

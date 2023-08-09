@@ -5,11 +5,11 @@ using System.Data.SqlClient;
 
 namespace DesignPattern.Singleton.DAL.Database
 {
-	public class ManageDatabase
+	public class ManageDatabaseForSingleton
 	{
 		private readonly string _connectionString;
 
-		public ManageDatabase(IConfiguration configurations)
+		public ManageDatabaseForSingleton(IConfiguration configurations)
 		{
 			_connectionString = configurations.GetConnectionString("Default");
 		}
