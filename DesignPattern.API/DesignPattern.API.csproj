@@ -16,6 +16,8 @@
   <ItemGroup>
     <ProjectReference Include="..\DesignPattern.Factory.BAL\DesignPattern.Factory.BAL.csproj" />
     <ProjectReference Include="..\DesignPattern.Singleton.DAL\DesignPattern.Singleton.DAL.csproj" />
+    <ProjectReference Include="..\DesignPatterns.AbstractFactory.BAL\DesignPatterns.AbstractFactory.BAL.csproj" />
+    <ProjectReference Include="..\DesignPatterns.Repository.DAL\DesignPatterns.Repository.DAL.csproj" />
   </ItemGroup>
 
 </Project>

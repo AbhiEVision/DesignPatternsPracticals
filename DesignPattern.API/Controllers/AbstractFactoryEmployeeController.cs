@@ -1,17 +1,15 @@
-﻿using DesignPatterns.Factory.BAL;
+﻿using DesignPatterns.AbstractFactory.BAL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DesignPatterns.API.Controllers
 {
-	public record OverTimeData(int empID, int hours);
-
-	[Route("api/[controller]")]
+	[Route("api/[controller]/[action]")]
 	[ApiController]
-	public class FactoryEmployeeController : ControllerBase
+	public class AbstractFactoryEmployeeController : ControllerBase
 	{
-		private EmployeeCalculations _employeeCalculations;
+		private EmployeeCalculationsWithAbstractFactory _employeeCalculations;
 
-		public FactoryEmployeeController(EmployeeCalculations employeeCalculations)
+		public AbstractFactoryEmployeeController(EmployeeCalculationsWithAbstractFactory employeeCalculations)
 		{
 			_employeeCalculations = employeeCalculations;
 		}
@@ -26,7 +24,7 @@ namespace DesignPatterns.API.Controllers
 
 			try
 			{
-				double hourlyPay = await _employeeCalculations.DoOvertimeCalculation(data.empID, data.hours);
+				double hourlyPay = await _employeeCalculations.CountTheOverTimePayByHoursAsync(data.empID, data.hours);
 				return Ok($"Hourly Pay is {hourlyPay}$");
 			}
 			catch (Exception ex)

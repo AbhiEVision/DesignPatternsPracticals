@@ -1,9 +1,9 @@
-﻿using DesignPattern.API.Attribute;
-using DesignPattern.Singleton.DAL.Database;
-using DesignPattern.Singleton.DAL.Models;
+﻿using DesignPatterns.API.Attribute;
+using DesignPatterns.Singleton.DAL.Database;
+using DesignPatterns.Singleton.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DesignPattern.API.Controllers
+namespace DesignPatterns.API.Controllers
 {
 	[Log]
 	[Route("api/[controller]/[action]")]

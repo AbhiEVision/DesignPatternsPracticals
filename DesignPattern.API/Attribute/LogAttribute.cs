@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using Serilog;
 
-namespace DesignPattern.API.Attribute
+namespace DesignPatterns.API.Attribute
 {
 	public class LogAttribute : ActionFilterAttribute
 	{
