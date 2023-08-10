@@ -1,4 +1,4 @@
-﻿namespace DesignPattern.Factory.BAL.Interfaces
+﻿namespace DesignPatterns.Factory.BAL.Interfaces
 {
 	public interface IDepartment
 	{

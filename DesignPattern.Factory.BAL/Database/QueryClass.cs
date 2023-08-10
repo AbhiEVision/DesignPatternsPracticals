@@ -1,4 +1,4 @@
-﻿namespace DesignPattern.Factory.BAL.Database
+﻿namespace DesignPatterns.Factory.BAL.Database
 {
 	public static class QueryClass
 	{

@@ -1,6 +1,6 @@
-﻿using DesignPattern.Factory.BAL.Interfaces;
+﻿using DesignPatterns.Factory.BAL.Interfaces;
 
-namespace DesignPattern.Factory.BAL.Departments
+namespace DesignPatterns.Factory.BAL.Departments
 {
 	internal class SalesDepartment : IDepartment
 	{

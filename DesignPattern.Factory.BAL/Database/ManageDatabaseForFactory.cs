@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 
-namespace DesignPattern.Factory.BAL.Database
+namespace DesignPatterns.Factory.BAL.Database
 {
 	public class ManageDatabaseForFactory
 	{
@@ -22,12 +22,12 @@ namespace DesignPattern.Factory.BAL.Database
 
 				fetchDepartment.Parameters.AddWithValue("empId", employeeId);
 
-				int depId = (int)await fetchDepartment.ExecuteScalarAsync();
+				var depId = await fetchDepartment.ExecuteScalarAsync();
 
 				connection.Close();
 				connection.Dispose();
 
-				return depId;
+				return depId == null ? 0 : (int)depId;
 			}
 		}
 	}

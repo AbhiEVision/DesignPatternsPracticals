@@ -1,8 +1,8 @@
-﻿using DesignPattern.Factory.BAL.Departments;
-using DesignPattern.Factory.BAL.Enum;
-using DesignPattern.Factory.BAL.Interfaces;
+﻿using DesignPatterns.Factory.BAL.Departments;
+using DesignPatterns.Factory.BAL.Enum;
+using DesignPatterns.Factory.BAL.Interfaces;
 
-namespace DesignPattern.Factory.BAL.Factory
+namespace DesignPatterns.Factory.BAL.Factory
 {
 	public class DepartmentFactory : IDepartmentFactory
 	{

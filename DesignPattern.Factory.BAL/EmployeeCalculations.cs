@@ -1,8 +1,8 @@
-﻿using DesignPattern.Factory.BAL.Database;
-using DesignPattern.Factory.BAL.Enum;
-using DesignPattern.Factory.BAL.Interfaces;
+﻿using DesignPatterns.Factory.BAL.Database;
+using DesignPatterns.Factory.BAL.Enum;
+using DesignPatterns.Factory.BAL.Interfaces;
 
-namespace DesignPattern.Factory.BAL
+namespace DesignPatterns.Factory.BAL
 {
 	public class EmployeeCalculations
 	{

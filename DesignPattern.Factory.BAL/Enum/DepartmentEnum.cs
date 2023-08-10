@@ -1,4 +1,4 @@
-﻿namespace DesignPattern.Factory.BAL.Enum
+﻿namespace DesignPatterns.Factory.BAL.Enum
 {
 	public enum DepartmentEnum
 	{
