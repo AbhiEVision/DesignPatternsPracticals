@@ -63,7 +63,16 @@ namespace DesignPatterns.Repository.DAL.Database
 				createCommand.Parameters.AddWithValue("salary", employeeDetails.Salary);
 				createCommand.Parameters.AddWithValue("departmentId", employeeDetails.DepartmentId);
 
-				int rowAffected = await createCommand.ExecuteNonQueryAsync();
+				int rowAffected;
+				try
+				{
+					rowAffected = await createCommand.ExecuteNonQueryAsync();
+
+				}
+				catch (Exception ex)
+				{
+					return false;
+				}
 
 				// Connection Close
 				connection.Close();
