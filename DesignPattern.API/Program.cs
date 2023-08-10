@@ -1,14 +1,16 @@
-using DesignPatterns.API.Attribute;
-using DesignPatterns.Factory.BAL;
-using DesignPatterns.Factory.BAL.Factory;
-using DesignPatterns.Factory.BAL.Interfaces;
-using DesignPatterns.Singleton.DAL.Database;
 using DesignPatterns.AbstractFactory.BAL;
 using DesignPatterns.AbstractFactory.BAL.Database;
 using DesignPatterns.AbstractFactory.BAL.Implemantations.Factories;
 using DesignPatterns.AbstractFactory.BAL.Interfaces;
+using DesignPatterns.API.Attribute;
+using DesignPatterns.CQRS.DAL.Implementation.Repository;
+using DesignPatterns.CQRS.DAL.Interface;
+using DesignPatterns.Factory.BAL;
+using DesignPatterns.Factory.BAL.Factory;
+using DesignPatterns.Factory.BAL.Interfaces;
 using DesignPatterns.Repository.DAL.Interface;
 using DesignPatterns.Repository.DAL.Repositories;
+using DesignPatterns.Singleton.DAL.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,6 +53,13 @@ builder.Services.AddScoped<EmployeeCalculationsWithAbstractFactory>();
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
+
+#endregion
+
+#region Registration for CQRS Design Pattern
+
+builder.Services.AddScoped<IQueryRepository, QueryRepository>();
+builder.Services.AddScoped<ICommandRepository, CommandRepository>();
 
 #endregion
 
