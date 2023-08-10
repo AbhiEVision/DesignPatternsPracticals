@@ -1,8 +1,14 @@
-using DesignPattern.API.Attribute;
-using DesignPattern.Factory.BAL;
-using DesignPattern.Factory.BAL.Factory;
-using DesignPattern.Factory.BAL.Interfaces;
-using DesignPattern.Singleton.DAL.Database;
+using DesignPatterns.API.Attribute;
+using DesignPatterns.Factory.BAL;
+using DesignPatterns.Factory.BAL.Factory;
+using DesignPatterns.Factory.BAL.Interfaces;
+using DesignPatterns.Singleton.DAL.Database;
+using DesignPatterns.AbstractFactory.BAL;
+using DesignPatterns.AbstractFactory.BAL.Database;
+using DesignPatterns.AbstractFactory.BAL.Implemantations.Factories;
+using DesignPatterns.AbstractFactory.BAL.Interfaces;
+using DesignPatterns.Repository.DAL.Interface;
+using DesignPatterns.Repository.DAL.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,12 +33,26 @@ builder.Services.AddSingleton<LogAttribute>();
 
 #region Registration for Factory Design Pattern
 
-builder.Services.AddTransient<DesignPattern.Factory.BAL.Database.ManageDatabaseForFactory>();
+builder.Services.AddTransient<DesignPatterns.Factory.BAL.Database.ManageDatabaseForFactory>();
 builder.Services.AddTransient<IDepartmentFactory, DepartmentFactory>();
 builder.Services.AddTransient<EmployeeCalculations>();
 
 #endregion
 
+#region Registration for Abstract Factory Pattern
+
+builder.Services.AddScoped<ManageDatabaseForAbstractFactory>();
+builder.Services.AddScoped<IAbstractFactory, AbstractFactory>();
+builder.Services.AddScoped<EmployeeCalculationsWithAbstractFactory>();
+
+#endregion
+
+#region Registration for Repository Design Pattern
+
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+
+#endregion
 
 var app = builder.Build();
 
