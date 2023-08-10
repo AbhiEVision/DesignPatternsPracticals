@@ -1,7 +1,7 @@
-﻿using DesignPattern.Singleton.DAL.Models;
+﻿using DesignPatterns.Singleton.DAL.Models;
 using System.Data.SqlClient;
 
-namespace DesignPattern.Singleton.DAL.MapperClasses
+namespace DesignPatterns.Singleton.DAL.MapperClasses
 {
 	internal static class Mapper
 	{

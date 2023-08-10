@@ -1,4 +1,4 @@
-﻿namespace DesignPattern.Singleton.DAL.Database
+﻿namespace DesignPatterns.Singleton.DAL.Database
 {
 	internal static class QueriesClass
 	{

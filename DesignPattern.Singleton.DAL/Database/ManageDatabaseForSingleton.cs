@@ -1,9 +1,9 @@
-﻿using DesignPattern.Singleton.DAL.MapperClasses;
-using DesignPattern.Singleton.DAL.Models;
+﻿using DesignPatterns.Singleton.DAL.MapperClasses;
+using DesignPatterns.Singleton.DAL.Models;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 
-namespace DesignPattern.Singleton.DAL.Database
+namespace DesignPatterns.Singleton.DAL.Database
 {
 	public class ManageDatabaseForSingleton
 	{

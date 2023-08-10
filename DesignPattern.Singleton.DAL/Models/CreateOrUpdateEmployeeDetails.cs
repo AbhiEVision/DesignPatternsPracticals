@@ -1,4 +1,4 @@
-﻿namespace DesignPattern.Singleton.DAL.Models
+﻿namespace DesignPatterns.Singleton.DAL.Models
 {
 	public class CreateOrUpdateEmployeeDetails
 	{

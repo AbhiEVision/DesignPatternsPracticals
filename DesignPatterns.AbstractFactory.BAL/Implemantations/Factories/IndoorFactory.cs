@@ -19,7 +19,7 @@ namespace DesignPatterns.AbstractFactory.BAL.Implemantations.Factories
 					return new ITDepartment();
 
 				default:
-					throw new ArgumentException("Plese enter valid Department type");
+					throw new ArgumentException("Please enter valid Department type");
 			}
 		}
 	}
