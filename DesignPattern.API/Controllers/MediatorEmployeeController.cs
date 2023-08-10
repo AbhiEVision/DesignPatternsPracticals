@@ -1,18 +1,20 @@
-﻿using DesignPatterns.Repository.DAL.Interface;
+﻿using DesignPatterns.Mediator.Commands;
+using DesignPatterns.Mediator.Queries;
 using DesignPatterns.Repository.DAL.Models;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DesignPatterns.API.Controllers
+namespace DesignPattern.API.Controllers
 {
 	[Route("api/[controller]/[action]")]
 	[ApiController]
-	public class RepositoryEmployeeController : ControllerBase
+	public class MediatorEmployeeController : ControllerBase
 	{
-		private readonly IEmployeeRepository _repository;
+		private readonly IMediator _mediator;
 
-		public RepositoryEmployeeController(IEmployeeRepository repository)
+		public MediatorEmployeeController(IMediator mediator)
 		{
-			_repository = repository;
+			_mediator = mediator;
 		}
 
 		[HttpGet]
@@ -20,14 +22,14 @@ namespace DesignPatterns.API.Controllers
 		{
 			if (id == null || id <= 0)
 			{
-				List<EmployeeDetailsRepo> employees = (await _repository.GetEmployeeDetailsAsync()).ToList();
+				List<EmployeeDetailsRepo> employees = await _mediator.Send(new GetEmployeeDetailsQuery());
 				if (employees == null || employees.Count() == 0)
 				{
 					return Ok("No Employee are Registered");
 				}
 				return Ok(employees);
 			}
-			EmployeeDetailsRepo employee = await _repository.GetEmployeeDetailAsync(id ?? 1);
+			EmployeeDetailsRepo employee = await _mediator.Send(new GetEmployeeByIdQuery() { Id = id ?? 1 });
 			if (employee == null)
 			{
 				return Ok("requested Data is not found");
@@ -44,7 +46,7 @@ namespace DesignPatterns.API.Controllers
 				return BadRequest("Please enter data");
 			}
 
-			bool created = await _repository.CreateEmployeeAsync(employeeDetails);
+			bool created = await _mediator.Send(new CreateEmployeeCommand(employeeDetails.Name, employeeDetails.Salary, employeeDetails.DepartmentId, employeeDetails.EmailAddress));
 
 			if (created)
 			{
@@ -62,7 +64,7 @@ namespace DesignPatterns.API.Controllers
 				return BadRequest("Please enter valid data!");
 			}
 
-			bool updated = await _repository.UpdateEmployeeAsync(id, employeeDetails);
+			bool updated = await _mediator.Send(new UpdateEmployeeDataCommand(id, employeeDetails.Name, employeeDetails.Salary, employeeDetails.DepartmentId, employeeDetails.EmailAddress));
 
 			if (updated)
 			{
@@ -81,7 +83,7 @@ namespace DesignPatterns.API.Controllers
 				return BadRequest("Please enter the valid data!");
 			}
 
-			bool deleted = await _repository.DeleteEmployeeAsync(empId);
+			bool deleted = await _mediator.Send(new DeleteEmployeeCommand(empId));
 
 			if (deleted)
 			{
@@ -90,6 +92,5 @@ namespace DesignPatterns.API.Controllers
 
 			return BadRequest("Employee is not found!");
 		}
-
 	}
 }

@@ -56,3 +56,5 @@ INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Parthiv
 
 -- -- Get DepartmentId employee
 -- SELECT DepartmentId FROM tblEmployee WHERE EmployeeId = 1
+
+select * from tblEmployee

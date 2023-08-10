@@ -11,6 +11,7 @@ using DesignPatterns.Factory.BAL.Interfaces;
 using DesignPatterns.Repository.DAL.Interface;
 using DesignPatterns.Repository.DAL.Repositories;
 using DesignPatterns.Singleton.DAL.Database;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,6 +61,29 @@ builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 builder.Services.AddScoped<IQueryRepository, QueryRepository>();
 builder.Services.AddScoped<ICommandRepository, CommandRepository>();
+
+#endregion
+
+#region Registration for Mediator Pattern
+
+builder.Services.AddMediatR(x =>
+{
+	x.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+	//var assemblyNames = Assembly.GetExecutingAssembly().GetReferencedAssemblies();
+	var Assemblies = new List<Assembly>();
+	var newAssembly = new AssemblyName("DesignPatterns.Mediator");
+	//foreach (var item in assemblyNames)
+	//{
+	//	Assemblies.Add(Assembly.Load(item));
+	//}
+
+	//foreach (var item in Assemblies)
+	//{
+	//	x.RegisterServicesFromAssembly(item);
+	//}
+
+	x.RegisterServicesFromAssembly(Assembly.Load(newAssembly));
+});
 
 #endregion
 

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Repository.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.CQRS.DAL", "DesignPatterns.CQRS.DAL\DesignPatterns.CQRS.DAL.csproj", "{7E1B876D-07C8-457B-96B6-3720390D0FBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Mediator", "DesignPatterns.Mediator\DesignPatterns.Mediator.csproj", "{F2886468-767B-4F69-A6E1-765951113105}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{7E1B876D-07C8-457B-96B6-3720390D0FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E1B876D-07C8-457B-96B6-3720390D0FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E1B876D-07C8-457B-96B6-3720390D0FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2886468-767B-4F69-A6E1-765951113105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2886468-767B-4F69-A6E1-765951113105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2886468-767B-4F69-A6E1-765951113105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2886468-767B-4F69-A6E1-765951113105}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
