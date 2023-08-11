@@ -39,22 +39,4 @@ INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Jil', 1
 INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Jay', 123.12, 3, 'jay@gmail.com')
 INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Bhavin', 123.12, 4, 'bhavin@gmail.com')
 INSERT INTO tblEmployee(Name,Salary,DepartmentId,EmailAddress) VALUES ( 'Parthiv', 123.12, 5, 'parthiv@gmail.com')
-
--- -- Get All EmployeeDetail Query
--- SELECT emp.Name, emp.Salary, dep.DepartmentName, emp.EmailAddress, emp.JoiningDate, sta.StatusName  FROM tblEmployee emp INNER JOIN tblDepartement dep ON dep.DepartmentId = emp.DepartmentId INNER JOIN tblStatus sta ON sta.StatusId = emp.StatusId 
-
--- -- Get EmployeeDetail Query
--- SELECT emp.Name, emp.Salary, dep.DepartmentName, emp.EmailAddress, emp.JoiningDate, sta.StatusName  FROM tblEmployee emp INNER JOIN tblDepartement dep ON dep.DepartmentId = emp.DepartmentId INNER JOIN tblStatus sta ON sta.StatusId = emp.StatusId where emp.EmployeeId = 1
-
--- -- Update Employee Data
--- UPDATE tblEmployee SET Name = 'Test', Salary = 132.23, DepartmentId = 1, EmailAddress = '' WHERE EmployeeId = 5
-
--- select * from tblEmployee
-
--- -- Soft Delete Employee
--- UPDATE tblEmployee SET isActive = 1 WHERE EmployeeId = 7
-
--- -- Get DepartmentId employee
--- SELECT DepartmentId FROM tblEmployee WHERE EmployeeId = 1
-
-select * from tblEmployee
+GO
