@@ -11,6 +11,7 @@ using DesignPatterns.Factory.BAL.Interfaces;
 using DesignPatterns.Repository.DAL.Interface;
 using DesignPatterns.Repository.DAL.Repositories;
 using DesignPatterns.Singleton.DAL.Database;
+using Serilog;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,8 +29,8 @@ builder.Services.AddScoped<ManageDatabaseForSingleton>();
 // Add Singleton means as Eager Loading
 builder.Services.AddSingleton<LogAttribute>();
 
-// Use logging
-//builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
+//Use logging
+builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
 
 #endregion
 
