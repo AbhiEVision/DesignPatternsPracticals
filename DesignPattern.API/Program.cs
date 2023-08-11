@@ -20,7 +20,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 #region Service Registrations for Singleton Design Pattern
 
 // Add Scoped means as deferred loading
