@@ -64,15 +64,8 @@ namespace DesignPatterns.Repository.DAL.Database
 				createCommand.Parameters.AddWithValue("departmentId", employeeDetails.DepartmentId);
 
 				int rowAffected;
-				try
-				{
-					rowAffected = await createCommand.ExecuteNonQueryAsync();
+				rowAffected = await createCommand.ExecuteNonQueryAsync();
 
-				}
-				catch (Exception ex)
-				{
-					return false;
-				}
 
 				// Connection Close
 				connection.Close();
